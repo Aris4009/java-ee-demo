@@ -42,6 +42,6 @@ public class AutowireController {
 	public R<Result> test() {
 		Result result = Result.builder().age(18).name("Tom").build();
 		log.info(autowireService.hello());
-		return R.OK(result);
+		return R.ok(result);
 	}
 }

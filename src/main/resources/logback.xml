@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="APPLICATION_NAME" value="java-ee-demo"/>
+    <property name="LOG_FILE_PATH" value="./logs"/>
+    <property name="LOG_FILE_NAME" value="${APPLICATION_NAME}.log"/>
+    <property name="FILE_SEPARATOR" value="/"/>
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+    <appender name="Console"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                %highlight(%d{ISO8601}) %highlight(%-5level) [${APPLICATION_NAME}][%blue(%t)] %yellow(%C{1.})%red(%M\(%line\)): %msg%n%throwable
+            </pattern>
+        </layout>
+    </appender>
+    <!-- LOG everything at INFO level -->
+    <root level="info">
+        <appender-ref ref="Console"/>
+    </root>
+    <logger name="ch.qos.logback" level="OFF" additivity="false"/>
+    <logger name="org.springframework" level="ERROR"/>
+    <logger name="org.apache" level="ERROR"/>
+</configuration>

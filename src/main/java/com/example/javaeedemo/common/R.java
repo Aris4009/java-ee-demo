@@ -21,12 +21,12 @@ public class R<T extends Serializable> implements Serializable {
 
 	private Integer code;
 
-	public static <T extends Serializable> R<T> OK(T data) {
+	public static <T extends Serializable> R<T> ok(T data) {
 		HttpCode ok = HttpCode.OK;
 		return R.<T>builder().data(data).code(ok.getCode()).msg(ok.getMsg()).build();
 	}
 
-	public static <T extends Serializable> R<T> FAILED(T data) {
+	public static <T extends Serializable> R<T> failed(T data) {
 		HttpCode failed = HttpCode.FAILED;
 		return R.<T>builder().data(data).code(failed.getCode()).msg(failed.getMsg()).build();
 	}
