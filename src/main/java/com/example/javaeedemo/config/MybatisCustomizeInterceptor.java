@@ -60,7 +60,6 @@ public class MybatisCustomizeInterceptor extends MybatisPlusInterceptor {
 					// 几乎不可能走进这里面,除非使用Executor的代理对象调用query[args[6]]
 					boundSql = (BoundSql) args[5];
 				}
-				test(ms, boundSql);
 				for (InnerInterceptor query : interceptors) {
 					if (!query.willDoQuery(executor, ms, parameter, rowBounds, resultHandler, boundSql)) {
 						log.debug("不执行query操作");
