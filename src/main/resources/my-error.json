@@ -1,0 +1,27 @@
+[
+  {
+    "klass": "org.springframework.web.HttpMediaTypeException",
+    "msg": "请求参数类型错误",
+    "code": 5001
+  },
+  {
+    "klass": "org.springframework.web.HttpRequestMethodNotSupportedException",
+    "msg": "请求方法错误",
+    "code": 5002
+  },
+  {
+    "klass": "org.springframework.web.HttpSessionRequiredException",
+    "msg": "请求缺少session",
+    "code": 5003
+  },
+  {
+    "klass": "org.springframework.web.bind.MissingRequestValueException",
+    "msg": "缺少请求参数",
+    "code": 5004
+  },
+  {
+    "klass": " org.springframework.web.multipart.support.MissingServletRequestPartException",
+    "msg": "缺少上传附件",
+    "code": 5005
+  }
+]

@@ -1,6 +1,6 @@
 package com.example.javaeedemo.common;
 
-import java.io.Serializable;
+import java.util.Arrays;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,9 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class R<T extends Serializable> implements Serializable {
-
-	private static final long serialVersionUID = 4157353341429860093L;
+public class R<T> {
 
 	private T data;
 
@@ -21,14 +19,23 @@ public class R<T extends Serializable> implements Serializable {
 
 	private Integer code;
 
-	public static <T extends Serializable> R<T> ok(T data) {
+	public static <T> R<T> ok(T data) {
 		HttpCode ok = HttpCode.OK;
 		return R.<T>builder().data(data).code(ok.getCode()).msg(ok.getMsg()).build();
 	}
 
-	public static <T extends Serializable> R<T> failed(T data) {
+	public static <T> R<T> failed() {
 		HttpCode failed = HttpCode.FAILED;
-		return R.<T>builder().data(data).code(failed.getCode()).msg(failed.getMsg()).build();
+		return R.<T>builder().code(failed.getCode()).msg(failed.getMsg()).build();
+	}
+
+	public static <T> R<T> failed(String... msg) {
+		HttpCode failed = HttpCode.FAILED;
+		return R.<T>builder().code(failed.getCode()).msg(Arrays.toString(msg)).build();
+	}
+
+	public static <T> R<T> failed(int code, String... msg) {
+		return R.<T>builder().code(code).msg(Arrays.toString(msg)).build();
 	}
 
 	enum HttpCode {

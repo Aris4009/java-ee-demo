@@ -1,4 +1,4 @@
-package com.example.javaeedemo.controller.autowire;
+package com.example.javaeedemo.controller;
 
 import java.io.Serializable;
 
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.javaeedemo.common.R;
-import com.example.javaeedemo.services.autowire.AutowireService;
+import com.example.javaeedemo.services.AutowireService;
 
 import lombok.Builder;
 import lombok.Data;

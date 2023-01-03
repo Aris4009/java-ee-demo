@@ -9,7 +9,7 @@
               class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>
-                %highlight(%d{ISO8601}) %highlight(%-5level) [${APPLICATION_NAME}][%blue(%t)] %yellow(%C{1.})%red(%M\(%line\)): %msg%n%throwable
+                %highlight(%d{ISO8601}) %highlight(%-5level) [${APPLICATION_NAME}][%blue(%t)] %yellow(%C{1.}) %red(%M\(%line\)): %msg%n%throwable
             </pattern>
         </layout>
     </appender>
@@ -17,6 +17,7 @@
     <root level="info">
         <appender-ref ref="Console"/>
     </root>
+    <logger name="com.example.javaeedemo.mapper" level="trace"/>
     <logger name="ch.qos.logback" level="OFF" additivity="false"/>
     <logger name="org.springframework" level="ERROR"/>
     <logger name="org.apache" level="ERROR"/>

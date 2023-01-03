@@ -1,4 +1,4 @@
-package com.example.javaeedemo.services.autowire;
+package com.example.javaeedemo.services;
 
 import org.springframework.stereotype.Service;
 
