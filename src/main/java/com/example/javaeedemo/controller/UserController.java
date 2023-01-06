@@ -33,4 +33,14 @@ public class UserController {
 	public R<Void> error() {
 		throw new Ex("error");
 	}
+
+	@GetMapping("/compression")
+	public String compression() {
+		int size = 4096;
+		byte[] bytes = new byte[size];
+		for (int i = 0; i < size; i++) {
+			bytes[i] = 'a';
+		}
+		return new String(bytes);
+	}
 }

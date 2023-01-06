@@ -7,6 +7,8 @@ server:
   error:
     whitelabel:
       enabled: false
+  compression:
+    enabled: true
 spring:
   datasource:
     driver-class-name: org.h2.Driver
@@ -19,5 +21,8 @@ spring:
       data-locations: classpath:db/data-h2.sql
       encoding: utf-8
       mode: always
+  main:
+    banner-mode: off
+    log-startup-info: false
 
 my.error.path: classpath:my-error.json
